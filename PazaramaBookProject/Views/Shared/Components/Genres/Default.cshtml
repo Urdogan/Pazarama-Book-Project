@@ -1,0 +1,24 @@
+﻿@model List<GenreEntity>
+
+
+
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="m-3">
+            <div>
+                <a href="/book/list/@item.GenreId">
+                    <img class="rounded-circle"  style="width:60px;height:60px" src=@item.GenreImageUrl><img>
+
+                </a>
+            </div>
+            <div style="max-width: 20px; max-height: 20px; ">
+                <a href="/book/list/@item.GenreId"  ><span class="overflow-hidden">@item.GenreName</span> </a>
+                
+            </div>
+        </div>
+    }
+
+</div>

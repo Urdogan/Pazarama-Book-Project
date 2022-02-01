@@ -1,0 +1,13 @@
+﻿@model String
+@{ 
+    string errorString = "Error";
+    if (!String.IsNullOrEmpty(Model))
+    {
+        errorString = Model;
+    }
+
+}
+
+<div class="alert alert-success mb-0 text-center">
+    @errorString
+</div>

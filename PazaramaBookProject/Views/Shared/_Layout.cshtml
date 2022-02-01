@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PazaramaBookProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/ListCard.css" rel="stylesheet" />
+    <link href="~/css/menu.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderSection("message", false)
+    @await Html.PartialAsync("_navbar")
+    @RenderSection("header", false)
+    <div class="container mt-3">
+        @if (IsSectionDefined("menu"))
+        {
+            @RenderSection("menu", false)
+            @RenderBody()
+    }
+    else
+    {
+        @RenderBody()
+    }
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - PazaramaBookProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/ListCard.js"></script>
+    <script src="~/js/menu.js"></script>
+    @await RenderSectionAsync("Scripts",false)
+</body>
+</html>

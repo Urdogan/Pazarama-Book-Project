@@ -1,0 +1,25 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <a href="/" class="navbar-brand text-light">Bootcamp Book Project</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/book/list" class="nav-link text-light">Books</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/book/Create" class="nav-link text-light">Create a New Book</a>
+                </li>
+            </ul>
+
+
+            <form action="/book/list" method="get" class="form-inline">
+                <input type="text" name="searchQuery" placeholder="Search" class="form-control mr-2" />
+                <button type="submit" class="btn btn-outline-light text-light mr-0">Ara</button>
+            </form>
+        </div>
+    </div>
+</nav>

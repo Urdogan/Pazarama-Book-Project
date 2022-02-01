@@ -1,0 +1,30 @@
+﻿@model ListEntity
+
+@{
+    string imageURL = "https://www.scholastic.com/content/dam/scholastic/educators/articles/20210729-guided-reading-booklists-16-9.jpg.corpimagerendition.xxl.1400.788.png";
+    string ListName = "Kitap Listesi";
+    if (!String.IsNullOrEmpty(Model.ListImageURL))
+    {
+        imageURL = Model.ListImageURL;
+    }
+    if (!String.IsNullOrEmpty(Model.ListName))
+    {
+        ListName = Model.ListName;
+    }
+
+    } 
+<div class="listcard hover">
+ 
+    <div class="card-img" style="background-image:url(@imageURL);">
+        <div class="overlay">
+            <div class="overlay-content">
+                <a class="hover" href="/book/BookList/@Model.ListID">@ListName</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+

@@ -1,0 +1,18 @@
+﻿@model ListViewModel
+@section header
+{
+    @await Html.PartialAsync("_header");
+}
+
+
+
+
+
+
+
+<div id="books">
+    @foreach (var list in Model.Lists)
+    {
+        @await Html.PartialAsync("_cardForList", list)
+    }
+</div>

@@ -1,0 +1,37 @@
+﻿@model BooksViewModel
+
+
+
+@if (!String.IsNullOrEmpty(ViewBag.ListName))
+{
+
+    <h1>@ViewBag.ListName</h1>
+}
+else if (!String.IsNullOrEmpty(ViewBag.GenreName))
+{
+    <h1> @ViewBag.GenreName</h1>
+}
+else
+{
+    <h1> Books List</h1>
+}
+
+
+<div id="book" class="row">
+    @if (Model.Books.Count > 0)
+    {
+        @foreach (var book in Model.Books)
+        {
+            @await Html.PartialAsync("_book", book)
+        }
+    }
+    else
+    {
+        <div class="alert alert-danger">Not Found</div>
+    }
+</div>
+
+@section menu
+{
+    @await Component.InvokeAsync("Genres")
+}
